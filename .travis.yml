@@ -3,7 +3,7 @@ addons:
   chrome: stable
 node_js:
   - node
-sudo: false
+sudo: required
 install:
   - npm install
 after_script:
