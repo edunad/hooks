@@ -8,20 +8,18 @@
 module.exports = function (config) {
     let singleMode = hasArg('--single') != null;
     let specArg = hasArg('--spec');
-    if(specArg != null) {
+    if (specArg != null) {
         specArg = `./tests/**/!(${specArg.replace('--spec=', '')}).spec.ts`;
     }
 
     config.set({
-        
         basePath: './',
         frameworks: ['jasmine'],
         failOnEmptyTestSuite: false,
 
         files: [
             './src/**/*.ts',
-            './tests/**/*.ts',
-            { pattern: './tests/mock/**/*.*', watched: false, included: false, served: true, nocache: false }
+            './tests/**/*.ts'
         ],
 
         exclude: ['./src/**/*.d.ts', specArg != null ? specArg : ''],
@@ -32,13 +30,15 @@ module.exports = function (config) {
         },
 
         reporters: [
-            'progress'
+            'progress',
+            'coverage-istanbul',
+            'coveralls'
         ],
 
         karmaTypescriptConfig: {
             tsconfig: './tsconfig.json'
         },
-        
+
         webpack: {
             mode: 'development',
             devtool: 'source-map',
@@ -48,6 +48,15 @@ module.exports = function (config) {
                         test: /\.ts$/,
                         loader: 'ts-loader?silent=true',
                         exclude: /node_modules/
+                    },
+                    {
+                        test: /\.ts$/,
+                        exclude: /(node_modules|\.spec\.ts$)/,
+                        loader: 'istanbul-instrumenter-loader',
+                        enforce: 'post',
+                        options: {
+                            esModules: true
+                        }
                     }
                 ]
             },
@@ -58,6 +67,13 @@ module.exports = function (config) {
         webpackMiddleware: {
             stats: 'errors-only',
             logLevel: 'silent'
+        },
+
+        coverageIstanbulReporter: {
+            fixWebpackSourcePaths: true,
+            combineBrowserReports: true,
+            skipFilesWithNoCoverage: true,
+            reports: ['lcov']
         },
 
         // web server port
@@ -79,7 +95,7 @@ module.exports = function (config) {
 function hasArg(lookout) {
     let found = null;
     process.argv.forEach((arg) => {
-        if(arg.indexOf(lookout) != -1) found = arg;
+        if (arg.indexOf(lookout) != -1) found = arg;
     });
 
     return found;
