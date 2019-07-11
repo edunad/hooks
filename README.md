@@ -1,4 +1,4 @@
-# h00k
+# hooks
 ## **LITE Unique Id observables** based on [garrysmod hooks](https://wiki.garrysmod.com/page/hook)
 
 ## Installation
@@ -10,7 +10,7 @@ npm install @edunad/hooks
 >### Local Hooks
  ```
      class myclass {
-         public hook: Hook<string = new Hook<string();
+         public hook: Hook<string> = new Hook<string>();
  
          public hello(): void {
              hook.emit('world'); // Transmit "world" to all subscriptions
