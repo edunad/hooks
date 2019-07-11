@@ -15,8 +15,7 @@
         "start": "webpack --config webpack.config.js --progress",
         "watch": "webpack --config webpack.config.js --progress --watch",
         "test": "npm run test-debug -- --single",
-        "test-debug": "karma start karma.conf.js",
-        "prepublish": "npm start"
+        "test-debug": "karma start karma.conf.js"
     },
     "types": "./index.d.ts",
     "main": "./index.js",
