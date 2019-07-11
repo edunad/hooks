@@ -1,7 +1,9 @@
 'use strict';
 
 const dts = require('dts-bundle');
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
+
 const pckg = require("./package.json");
 const production = process.env.NODE_ENV != null && process.env.NODE_ENV.trim() === 'production';
 
@@ -12,7 +14,7 @@ DtsBundlePlugin.prototype.apply = (compiler) => {
         name: pckg.name,
         main: './src/index.d.ts',
         out: '../.bin/index.d.ts',
-        
+
         removeSource: true,
         outputAsModuleFolder: true
       });
@@ -60,6 +62,11 @@ module.exports = {
     },
 
     plugins: [
-        new DtsBundlePlugin()
+        new DtsBundlePlugin(),
+        new CopyPlugin([
+            { from: './package.json', to: './' },
+            { from: './README.md', to: './' },
+            { from: './LICENSE', to: './' }
+        ]),
     ]
 };

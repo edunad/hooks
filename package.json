@@ -9,7 +9,7 @@
     },
     "license": "MIT",
     "copyright": "© 2019, Eduardo Fernandes",
-    "repository": "https://github.com/edunad/rawr",
+    "repository": "https://github.com/edunad/h00ks",
     "description": "Quick simple observable system",
     "scripts": {
         "start": "webpack --config webpack.config.js --progress",
@@ -23,6 +23,7 @@
     "devDependencies": {
         "@types/jasmine": "^3.3.13",
         "@types/karma": "^3.0.3",
+        "copy-webpack-plugin": "^5.0.3",
         "dts-bundle": "^0.7.3",
         "jasmine": "^3.4.0",
         "jasmine-core": "^3.4.0",
