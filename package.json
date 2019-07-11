@@ -1,6 +1,6 @@
 {
-    "name": "h00ks",
-    "productName": "h00ks",
+    "name": "h00k",
+    "productName": "h00k",
     "version": "0.0.1",
     "author": {
         "name": "Eduardo Fernandes (FailCake)",
@@ -10,7 +10,7 @@
     "license": "MIT",
     "copyright": "© 2019, Eduardo Fernandes",
     "repository": "https://github.com/edunad/h00ks",
-    "description": "Quick simple observable system",
+    "description": "LITE Unique Id observables",
     "scripts": {
         "start": "webpack --config webpack.config.js --progress",
         "watch": "webpack --config webpack.config.js --progress --watch",

@@ -1,6 +1,12 @@
-# h00ks
+# h00k
 ## **LITE Unique Id observables** based on [garrysmod hooks](https://wiki.garrysmod.com/page/hook)
 
+## Installation
+```
+npm install @edunad/hooks
+```
+
+## Examples
 >### Local Hooks
  ```
      class myclass {
