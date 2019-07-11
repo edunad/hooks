@@ -1,0 +1,39 @@
+{
+    "name": "h00ks",
+    "productName": "h00ks",
+    "version": "0.0.1",
+    "author": {
+        "name": "Eduardo Fernandes (FailCake)",
+        "email": "mythicalrawr@gmail.com",
+        "url": "http://mythicalrawr.net"
+    },
+    "license": "MIT",
+    "copyright": "© 2019, Eduardo Fernandes",
+    "repository": "https://github.com/edunad/rawr",
+    "description": "Quick simple observable system",
+    "scripts": {
+        "start": "webpack --config webpack.config.js --progress",
+        "watch": "webpack --config webpack.config.js --progress --watch",
+        "test": "npm run test-debug -- --single",
+        "test-debug": "karma start karma.conf.js",
+        "prepublish": "npm start"
+    },
+    "types": "./index.d.ts",
+    "main": "./index.js",
+    "devDependencies": {
+        "@types/jasmine": "^3.3.13",
+        "@types/karma": "^3.0.3",
+        "dts-bundle": "^0.7.3",
+        "jasmine": "^3.4.0",
+        "jasmine-core": "^3.4.0",
+        "karma": "^4.1.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-jasmine": "^2.0.1",
+        "karma-webpack": "^4.0.2",
+        "ts-loader": "^6.0.4",
+        "typescript": "^3.5.3",
+        "webpack": "^4.35.3",
+        "webpack-cli": "^3.3.5"
+    },
+    "dependencies": {}
+}
