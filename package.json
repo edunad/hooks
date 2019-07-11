@@ -1,6 +1,6 @@
 {
-    "name": "h00k",
-    "productName": "h00k",
+    "name": "@edunad/hooks",
+    "productName": "hooks",
     "version": "0.0.1",
     "author": {
         "name": "Eduardo Fernandes (FailCake)",
@@ -9,7 +9,7 @@
     },
     "license": "MIT",
     "copyright": "© 2019, Eduardo Fernandes",
-    "repository": "https://github.com/edunad/h00ks",
+    "repository": "git://github.com/edunad/hooks.git",
     "description": "LITE Unique Id observables",
     "scripts": {
         "start": "webpack --config webpack.config.js --progress",
