@@ -17,6 +17,10 @@
         "test": "npm run test-debug -- --single",
         "test-debug": "karma start karma.conf.js"
     },
+    "keywords": ["hooks", "observables", "lite", "global", "garrysmod"],
+    "bugs": {
+        "url": "https://github.com/edunad/hooks/issues"
+    },
     "types": "./index.d.ts",
     "main": "./index.js",
     "devDependencies": {
