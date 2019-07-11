@@ -1,4 +1,4 @@
-# hooks
+# hooks⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀[![Coverage Status](https://coveralls.io/repos/github/edunad/hooks/badge.svg?branch=master)](https://coveralls.io/github/edunad/hooks?branch=master) [![Build Status](https://travis-ci.org/edunad/hooks.svg?branch=master)](https://travis-ci.org/edunad/hooks)
 ## **LITE Unique Id observables** based on [garrysmod hooks](https://wiki.garrysmod.com/page/hook)
 
 ## Installation
