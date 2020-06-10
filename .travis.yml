@@ -4,6 +4,10 @@ addons:
 node_js:
   - node
 sudo: required
+services:
+  - xvfb
+before_script:
+  - export DISPLAY=:99.0
 install:
   - npm install
 script:
