@@ -63,10 +63,12 @@ module.exports = {
 
     plugins: [
         new DtsBundlePlugin(),
-        new CopyPlugin([
-            { from: './package.json', to: './' },
-            { from: './README.md', to: './' },
-            { from: './LICENSE', to: './' }
-        ]),
+        new CopyPlugin({
+            patterns: [
+                { from: './package.json', to: './' },
+                { from: './README.md', to: './' },
+                { from: './LICENSE', to: './' }
+            ]
+        }),
     ]
 };
