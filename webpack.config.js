@@ -5,7 +5,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const pckg = require("./package.json");
-const production = process.env.NODE_ENV != null && process.env.NODE_ENV.trim() === 'production';
 
 function DtsBundlePlugin(){}
 DtsBundlePlugin.prototype.apply = (compiler) => {
@@ -23,9 +22,9 @@ DtsBundlePlugin.prototype.apply = (compiler) => {
 
 // SETUP
 module.exports = {
-    mode: production ? 'production' : 'development',
+    mode: 'development',
 
-    devtool: production ? false : 'source-map', // eval
+    devtool: 'source-map', // eval
     cache: false,
 
     entry: {

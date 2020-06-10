@@ -12,7 +12,7 @@
     "repository": "git://github.com/edunad/hooks.git",
     "description": "LITE Unique Id observables",
     "scripts": {
-        "start": "webpack --config webpack.config.js --progress",
+        "start": "webpack --config webpack.config.js --progress --production",
         "watch": "webpack --config webpack.config.js --progress --watch",
         "test": "npm run test-debug -- --single",
         "test-debug": "karma start karma.conf.js"
