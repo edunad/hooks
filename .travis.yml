@@ -4,11 +4,12 @@ addons:
 node_js:
   - node
 sudo: required
-install:
-  - npm install
+services:
+  - xvfb
 before_script:
   - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+install:
+  - npm install
 script:
   - npm test
 after_success:
