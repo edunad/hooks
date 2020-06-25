@@ -3,6 +3,7 @@ import { Hook } from '../models/hook';
 // Global hooks
 export class hooks {
     private static hooks: { [id: string]: Hook<any> } = {};
+
     public static add(event: string, id: string, callback: (event: any) => any): void {
         if(this.hooks[event] == null) {
             this.hooks[event] = new Hook<any>();

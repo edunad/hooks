@@ -3,15 +3,16 @@ import { hooks } from "../../src/services/hooks";
 describe('hooks', () => {
     it('Succeeds global hook add does not throw error', () => {
         expect(() => hooks.add('think', 'my-think', (data: number) => {})).not.toThrowError();
-        
+
         expect(hooks.getHook('random')).toBe(undefined);
         expect(hooks.getHook('think')).not.toBe(null);
+        expect(Object.keys(hooks.getHooks()).length).toBe(1);
         expect(Object.keys(hooks.getHook('think').getListeners()).length).toBe(1);
     });
 
     it('Succeeds global hook remove does not throw error', () => {
         expect(() => hooks.add('think', 'my-think', (data: number) => {})).not.toThrowError();
-        
+
         expect(hooks.getHook('think')).not.toBe(null);
         expect(Object.keys(hooks.getHook('think').getListeners()).length).toBe(1);
 
@@ -26,7 +27,7 @@ describe('hooks', () => {
 
             return cb();
         })).not.toThrowError();
-        
+
         expect(hooks.getHook('think')).not.toBe(null);
         expect(Object.keys(hooks.getHook('think').getListeners()).length).toBe(1);
         expect(() => hooks.emit('think', 1)).not.toThrowError();
