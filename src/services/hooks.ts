@@ -18,7 +18,7 @@ export class hooks {
     }
 
     public static emit(event: string, emitData: any): void {
-        if(this.hooks[event] == null) return;
+        if(this.hooks[event] == null) throw new Error(`[Hooks] Unknown global hook event {${event}}, forgot to add?`);
         this.hooks[event].emit(emitData);
     }
 

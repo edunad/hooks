@@ -23,7 +23,7 @@ describe('Hooks', () => {
         expect(() => hook.add(null, (t: number) => {})).toThrowError('[Hooks] Id cannot be null, use "addUnique" instead');
     });
 
-    it('Succeeds when destroy to remove from hooks', () => {
+    it('Succeeds when destroy removes from hooks', () => {
         let hook: Hook<number> = new Hook<number>();
         let hookSub: HookSubscription = hook.add('test', (t: number) => {});
 

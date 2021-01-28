@@ -22,6 +22,12 @@ npm install @edunad/hooks
          public registerHooks(): void {
              this.hookSub = myclass.hook.add('my-unique-id', (t: string) = {
                  console.debug(t); // Will print "world"
+             }); 
+             
+             // or
+
+             this.hookSub = myclass.hook.addUnique((t: string) = {
+                 console.debug(t); // Will print "world"
              });
          }
  

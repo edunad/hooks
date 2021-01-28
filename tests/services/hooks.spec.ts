@@ -18,6 +18,8 @@ describe('hooks', () => {
 
         expect(() => hooks.remove('think', 'my-think')).not.toThrowError();
         expect(Object.keys(hooks.getHook('think').getListeners()).length).toBe(0);
+
+        expect(() => hooks.remove('invalid-hook-id', 'invalid-hook-id')).not.toThrowError();
     });
 
     it('Succeeds global hook emit does not throw error', (cb) => {
@@ -31,5 +33,6 @@ describe('hooks', () => {
         expect(hooks.getHook('think')).not.toBe(null);
         expect(Object.keys(hooks.getHook('think').getListeners()).length).toBe(1);
         expect(() => hooks.emit('think', 1)).not.toThrowError();
+        expect(() => hooks.emit('invalid-hook-id', 1)).toThrowError(`[Hooks] Unknown global hook event {invalid-hook-id}, forgot to add?`);
     });
 });

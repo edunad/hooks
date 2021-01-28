@@ -8,24 +8,21 @@ const pckg = require("./package.json");
 
 function DtsBundlePlugin(){}
 DtsBundlePlugin.prototype.apply = (compiler) => {
-  compiler.plugin('done', () => {
-    dts.bundle({
-        name: pckg.name,
-        main: './src/index.d.ts',
-        out: '../.bin/index.d.ts',
+    compiler.hooks.done.tap('DtsBundle', () => {
+        dts.bundle({
+            name: pckg.name,
+            main: './src/index.d.ts',
+            out: '../.bin/index.d.ts',
 
-        removeSource: true,
-        outputAsModuleFolder: true
-      });
-  });
+            removeSource: true,
+            outputAsModuleFolder: true
+        });
+    });
 };
 
 // SETUP
-module.exports = {
-    mode: 'development',
-
-    devtool: 'source-map', // eval
-    cache: false,
+let config = {
+    devtool: 'source-map',
 
     entry: {
         'index': './src/index.ts',
@@ -39,6 +36,12 @@ module.exports = {
         library: pckg.name,
         libraryTarget: 'umd',
         umdNamedDefine: true
+    },
+
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
     },
 
     resolve: {
@@ -70,4 +73,12 @@ module.exports = {
             ]
         }),
     ]
+};
+
+
+module.exports = (env, argv) => {
+    const production = argv.mode === 'production';
+    if (production) config.devtool = false;
+    
+    return config;
 };
