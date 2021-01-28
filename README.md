@@ -1,5 +1,5 @@
 # hooks (Typescript)⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀[![npm version](https://badge.fury.io/js/%40edunad%2Fhooks.svg)](https://badge.fury.io/js/%40edunad%2Fhooks) [![Coverage Status](https://coveralls.io/repos/github/edunad/hooks/badge.svg?branch=master)](https://coveralls.io/github/edunad/hooks?branch=master) [![Build Status](https://travis-ci.org/edunad/hooks.svg?branch=master)](https://travis-ci.org/edunad/hooks)
-## **LITE Unique Id observables** based on [garrysmod hooks](https://wiki.garrysmod.com/page/hook)
+## **LITE Unique Id observables** based on [garrysmod hooks](https://wiki.facepunch.com/gmod/hook)
 
 ## Installation
 ```
